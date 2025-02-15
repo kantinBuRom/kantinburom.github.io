@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Warung Bu Rom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #e65100;
+            --secondary-color: #ff8f00;
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Enhanced Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./image/tentangkami.jpg');
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Tambahan style untuk memastikan gambar responsive */
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll; /* Disable parallax on mobile */
+                height: 60vh; /* Shorter height on mobile */
+            }
+        }
+
+        @media (orientation: portrait) {
+            .hero {
+                background-position: center center;
+                background-size: contain; /* Ensure full image is visible on portrait mode */
+                padding: 2rem 0;
+            }
+        }
+
+        @media (orientation: landscape) {
+            .hero {
+                background-size: cover; /* Cover in landscape mode */
+            }
+        }
+
+        /* Alternative solution using img tag instead of background */
+        .hero-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: backwards;
+        }
+
+        /* Enhanced Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transform: translateY(-50px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 1rem;
+                margin: 2rem 1rem;
+            }
+
+            .about-section {
+                padding: 2rem;
+                transform: translateY(-30px);
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="./index.html" class="nav-brand">Warung Bu Rom</a>
+            <div class="nav-links">
+                <a href="./index.html">Beranda</a>
+                <a href="./tentang-kami.html">Tentang Kami</a>
+                <a href="./kebijakan-privasi.html">Kebijakan Privasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Tentang Warung Bu Rom</h1>
+            <p>Tradisi rasa yang menyatukan sejak 2020</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="about-section" data-aos="fade-up">
+            <p>Warung Bu Rom adalah tempat makan favorit yang telah melayani pelanggan setia kami selama lebih dari 5 tahun. Kami menyediakan berbagai hidangan lezat dengan harga terjangkau, sambil tetap mempertahankan kualitas dan cita rasa autentik yang telah menjadi ciri khas kami.</p>
+        </section>
+        
+        <div class="features">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Kualitas Terbaik</h3>
+                <p>Kami hanya menggunakan bahan-bahan segar dan berkualitas tinggi untuk setiap hidangan. Setiap masakan dipersiapkan dengan standar kebersihan yang ketat.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Harga Terjangkau</h3>
+                <p>Nikmati hidangan lezat dengan harga yang ramah di kantong. Kami berkomitmen untuk menyajikan makanan berkualitas dengan harga yang terjangkau.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Pelayanan Ramah</h3>
+                <p>Tim kami siap melayani Anda dengan senyuman dan keramahan. Kepuasan pelanggan adalah prioritas utama kami.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- <p>&copy; 2025 Warung Bu Rom. Hak Cipta Dilindungi.</p> -->
+             <script>document.write(new Date().getFullYear())</script> Warung Bu Rom. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 2rem';
+            } else {
+                navbar.style.padding = '1rem 2rem';
+            }
+        });
+    </script>
+</body>
+</html>
