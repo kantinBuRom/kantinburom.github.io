@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /index.html
 
-Disallow: /
 Disallow: /menu.html
-Disallow: /kebijakan-privasi.html
-Disallow: /tentang-kami.html
+Allow: /kebijakan-privasi.html
+Allow: /tentang-kami.html
