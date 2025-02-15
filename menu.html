@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id" oncontextmenu="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Warung Bu Rom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet"crossorigin="anonymous"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH">
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Menu Warung Bu Rom</h1>
+            <div class="store-status open" id="storeStatus">Buka</div>
+            <div class="user-info" id="userInfo">
+                <!-- User info will be populated here -->
+            </div>
+            <div id="jam" class="text-center"></div>
+            <mark>Pembayaran Online cek Info Toko</mark>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Cari menu..." oninput="filterMenu()">
+        </div>
+        <div class="menu-container">
+            <div class="menu-category">
+                <h2 class="category-title">Menu</h2>
+                <div id="menuList"></div>
+            </div>
+        </div>
+    </div>
+    <div class="floating-info" onclick="showStoreInfo()">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#25D366"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="8"></line>
+        </svg>
+        <span>Info Toko</span>
+      </div>
+
+    <div class="order-summary" id="orderSummary">
+        <div class="summary-content">
+            <div class="total-price" id="totalPrice">Total: Rp 0</div>
+            <button type="submit" class="order-btn" id="orderButton" onclick="processOrder()" disabled>
+                Pesan via WhatsApp
+            </button>
+            
+        </div>
+    </div>
+
+    <div class="store-location">
+        <h2>Lokasi Toko</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3738166352805!2d106.68896592415025!3d-6.345614212081687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sPamulang%20University%20Campus%202%20(UNPAM%20Viktor)!5e0!3m2!1sen!2sid!4v1739282816919!5m2!1sen!2sid" 
+                allowfullscreen="" 
+                title="Pamulang University Campus 2 Location" 
+                width="600" 
+                height="450">
+            </iframe>
+        </div>
+    </div>    
+
+    <script src="./js/menu.js"></script>
+
+</body>
+</html>

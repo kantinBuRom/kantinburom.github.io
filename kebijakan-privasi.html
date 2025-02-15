@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi - Warung Bu Rom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e65100;
+            --secondary: #ff8f00;
+            --dark: #333;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            top: 13px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: url('/api/placeholder/1200/300') center/cover; */
+            background-color: #e65100;
+            opacity: 0.1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: -3rem auto 2rem;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .privacy-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .privacy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+        }
+
+        .privacy-section {
+            background: var(--white);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .privacy-section:hover {
+            transform: translateY(-3px);
+        }
+
+        .privacy-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .privacy-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .privacy-section ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+
+        .privacy-section li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .privacy-section li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .header {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                margin: -2rem 1rem 2rem;
+                padding: 0;
+            }
+
+            .privacy-section {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1.2rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-brand">Warung Bu Rom</a>
+            <div class="nav-links">
+                <a href="./index.html">Beranda</a>
+                <a href="./tentang-kami.html">Tentang Kami</a>
+                <a href="./kebijakan-privasi.html">Kebijakan Privasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Kebijakan Privasi</h1>
+            <p>Komitmen kami untuk melindungi privasi Anda</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="privacy-card" data-aos="fade-up">
+            <div class="privacy-section">
+                <h2>Pengumpulan Data</h2>
+                <p>Kami hanya mengumpulkan informasi yang diperlukan untuk meningkatkan layanan kami. Data yang kami kumpulkan meliputi:</p>
+                <ul>
+                    <li>Nama dan informasi kontak untuk memudahkan komunikasi</li>
+                    <li>Preferensi makanan untuk menyesuaikan rekomendasi</li>
+                    <li>Riwayat pesanan untuk meningkatkan pengalaman pelanggan</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>Penggunaan Data</h2>
+                <p>Data yang kami kumpulkan digunakan secara eksklusif untuk:</p>
+                <ul>
+                    <li>Meningkatkan kualitas layanan dan pengalaman pelanggan</li>
+                    <li>Memproses pesanan Anda dengan efisien dan akurat</li>
+                    <li>Memberikan informasi tentang promosi khusus yang relevan</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>Keamanan Data</h2>
+                <p>Kami menerapkan langkah-langkah keamanan yang ketat untuk melindungi data Anda. Komitmen kami terhadap keamanan data meliputi:</p>
+                <ul>
+                    <li>Enkripsi data sensitif untuk menjaga kerahasiaan</li>
+                    <li>Pembatasan akses data hanya untuk staf yang berwenang</li>
+                    <li>Pembaruan rutin sistem keamanan untuk mencegah pelanggaran data</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Warung Bu Rom. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 2rem';
+            } else {
+                navbar.style.padding = '1rem 2rem';
+            }
+        });
+    </script>
+</body>
+</html>

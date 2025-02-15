@@ -1,0 +1,164 @@
+{
+  "IndomieGoreng": {
+    "name": "Indomie Goreng 🍜",
+    "price": 8000,
+    "qty": 0,
+    "description": "Indomie Goreng dengan telur"
+  },
+  "IndomieKari": {
+    "name": "Indomie Kari 🍜",
+    "price": 8000,
+    "qty": 0,
+    "description": "Indomie Kari dengan kuah yang menyegarkan"
+  },
+  "IndomieSoto": {
+    "name": "Indomie Soto 🍜",
+    "price": 8000,
+    "qty": 0,
+    "description": "Indomie Soto dengan cita rasa kuah yang sangat nikmat"
+  },
+  "MieGorengTelur": {
+    "name": "Mie Goreng Telur 🍜",
+    "price": 10000,
+    "qty": 0,
+    "description": "Mie Goreng dengan telur"
+  },
+  "KwetiauGoreng": {
+    "name": "Kwetiau Goreng 🍛",
+    "price": 12000,
+    "qty": 0,
+    "description": "Kwetiau Goreng dengan rasa yang gurih"
+  },
+  "KwetiauRebus": {
+    "name": "Kwetiau Rebus 🍛",
+    "price": 12000,
+    "qty": 0,
+    "description": "Kwetiau Rebus dengan kuah yang segar"
+  },
+  "KwetiauGorengSpesial": {
+    "name": "Kwetiau Goreng Spesial 🍛",
+    "price": 15000,
+    "qty": 0,
+    "description": "Kwetiau Goreng Spesial dengan rasa yang gurih"
+  },
+  "KwetiauRebusSpesial": {
+    "name": "Kwetiau Rebus Spesial 🍛",
+    "price": 15000,
+    "qty": 0,
+    "description": "Kwetiau Rebus Spesial dengan kuah yang segar"
+  },
+  "PopMie": {
+    "name": "Pop Mie 🍜",
+    "price": 10000,
+    "qty": 0,
+    "description": "Pop Mie dengan rasa yang nikmat"
+  },
+  "NasiGorengTelur": {
+    "name": "Nasi Goreng Telur 🍱",
+    "price": 10000,
+    "qty": 0,
+    "description": "Nasi Goreng dengan telur"
+  },
+  "RiceBowlTelur": {
+    "name": "Rice Bowl Telur 🍱",
+    "price": 10000,
+    "qty": 0,
+    "description": "Rice Bowl dengan telur"
+  },
+  "RiceBowlAyam": {
+    "name": "Rice Bowl Ayam 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Rice Bowl dengan ayam"
+  },
+  "NasiAyamGeprek": {
+    "name": "Nasi Ayam Geprek 🌶️",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Geprek dengan sambal yang pedas"
+  },
+  "NasiAyamPenyet": {
+    "name": "Nasi Ayam 🌶️",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Geprek Spesial dengan sambal yang pedas"
+  },
+  "NasiAyamGoreng": {
+    "name": "Nasi Ayam Goreng 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Goreng dengan ayam yang renyah"
+  },
+  "NasiAyamBakar": {
+    "name": "Nasi Ayam Bakar 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Bakar dengan ayam yang gurih"
+  },
+  "NasiAyamBarbeque": {
+    "name": "Nasi Ayam Barbeque 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Barbeque"
+  },
+  "NasiAyamAsamManis": {
+    "name": "Nasi Ayam Asam Manis 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Asam Manis"
+  },
+  "NasiAyamHotLava": {
+    "name": "Nasi Ayam Hot Lava 🌶️",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Hot Lava dengan sambal yang pedas"
+  },
+  "NasiAyamBolognese": {
+    "name": "Nasi Ayam Bolognese 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Bolognese"
+  },
+  "NasiAyamKatsu": {
+    "name": "Nasi Ayam Katsu 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Katsu"
+  },
+  "NasiAyamTeriyaki": {
+    "name": "Nasi Ayam Teriyaki 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Ayam Teriyaki"
+  },
+  "NasiSotoAyam": {
+    "name": "Nasi Soto Ayam 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Soto Ayam dengan kuah yang nikmat"
+  },
+  "NasiGorengSpesial": {
+    "name": "Nasi Goreng Spesial 🍱",
+    "price": 15000,
+    "qty": 0,
+    "description": "Nasi Goreng Spesial dengan rasa yang nikmat"
+  },
+  "Seblak": {
+    "name": "Seblak 🍲",
+    "price": 12000,
+    "qty": 0,
+    "description": "Seblak dengan sambal yang pedas"
+  },
+  "Sosis": {
+    "name": "Sosis 🥖",
+    "price": 10000,
+    "qty": 0,
+    "description": "Sosis dengan rasa yang nikmat"
+  },
+  "AirMineral": {
+    "name": "Air Mineral 💧",
+    "price": 5000,
+    "qty": 0,
+    "description": "Air Mineral dengan rasa yang segar"
+  }
+}
