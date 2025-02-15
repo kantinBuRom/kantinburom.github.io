@@ -275,11 +275,11 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="./index.html" class="nav-brand">Warung Bu Rom</a>
+            <a rel="noopener noreferrer" href="./index.html" class="nav-brand">Warung Bu Rom</a>
             <div class="nav-links">
-                <a href="./index.html">Beranda</a>
-                <a href="./tentang-kami.html">Tentang Kami</a>
-                <a href="./kebijakan-privasi.html">Kebijakan Privasi</a>
+                <a rel="noopener noreferrer" href="./index.html">Beranda</a>
+                <a rel="noopener noreferrer" href="./tentang-kami.html">Tentang Kami</a>
+                <a rel="noopener noreferrer" href="./kebijakan-privasi.html">Kebijakan Privasi</a>
             </div>
         </div>
     </nav>
@@ -327,7 +327,9 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Warung Bu Rom. Hak Cipta Dilindungi.</p>
+            <p>&copy; <script>
+                        document.write(new Date().getFullYear());
+            </script> Warung Bu Rom. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
