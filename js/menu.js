@@ -372,27 +372,36 @@ function loadUserData() {
 
 function renderMenu() {
   let menuHTML = "";
-  for (let key in menuItems) {
-    const item = menuItems[key];
+
+  // Ubah objek menjadi array, lalu urutkan berdasarkan nama
+  const sortedMenu = Object.entries(menuItems).sort((a, b) =>
+    a[1].name.localeCompare(b[1].name)
+  );
+
+  // Loop melalui array yang sudah diurutkan
+  for (let [key, item] of sortedMenu) {
     menuHTML += `
-            <div class="menu-item" data-name="${item.name.toLowerCase()}">
-                <div class="menu-item-info">
-                    <div class="menu-item-name">${item.name}</div>
-                    <div class="menu-item-price">Rp ${item.price.toLocaleString()}</div>
-                    <div class="menu-item-description">${item.description}</div>
-                </div>
-                <div class="quantity-control">
-                    <button class="qty-btn" onclick="changeQty('${key}', -1)" ${
+      <div class="menu-item" data-name="${item.name.toLowerCase()}">
+          <div class="menu-item-info">
+              <div class="menu-item-name">${item.name}</div>
+              <div class="menu-item-price">Rp ${item.price.toLocaleString()}</div>
+              <div class="menu-item-description">${item.description}</div>
+          </div>
+          <div class="quantity-control">
+              <button class="qty-btn" onclick="changeQty('${key}', -1)" ${
       item.qty === 0 ? "disabled" : ""
     }>-</button>
-                    <span class="qty-display" id="${key}Qty">${item.qty}</span>
-                    <button class="qty-btn" onclick="changeQty('${key}', 1)">+</button>
-                </div>
-            </div>
-        `;
+              <span class="qty-display" id="${key}Qty">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty('${key}', 1)">+</button>
+          </div>
+      </div>
+    `;
   }
+
+  // Tampilkan hasil ke dalam elemen dengan id "menuList"
   document.getElementById("menuList").innerHTML = menuHTML;
 }
+
 
 function changeQty(item, amount) {
   const newQty = menuItems[item].qty + amount;
