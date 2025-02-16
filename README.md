@@ -26,7 +26,8 @@ Ucapan terima kasih yang sebesar-besarnya kepada individu-individu berikut yang 
 5. **Ridwan Kristiadi** – Untuk bantuannya dalam desain dan tampilan website.
 6. **Rizky Ramadhan** – Untuk penguji coba dan kontribusinya dalam pengembangan website.
 7. **Sultan Aji Saputra** – Untuk saran dan bantuannya dalam pengembangan fitur.
-8. **Ray Yasrin Matin** (keluar 2023) – Untuk dukungan dan kerja kerasnya selama bergabung.
+8. **Ray Yasrin Matin** (keluar 2023) – Untuk dukungan dan kerja kerasnya selama bergabung, dan terima kasih sudah menjadi teman untuk kita semua
+9. **Muhammad Dody Arvansyah** (keluar 2023) - Untuk dukungan dan kerja kerasnya selama bergabung, dan terima kasih sudah menjadi teman untuk kita semua
 
 ## Kontak
 
