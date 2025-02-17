@@ -1,6 +1,6 @@
 const securityConfig = {
   maxLength: 100,
-  namePattern: /^[a-zA-Z\s]+$/,
+  namePattern: /^[a-zA-Z\u00C0-\u00FF\s]+$/, // /^[a-zA-Z\s]+$/,
   addressPattern: /^[a-zA-Z0-9\s,./-]+$/,
   classPattern: /^[a-zA-Z0-9\s-]+$/,
   submissionLimit: 5,
@@ -98,12 +98,43 @@ function isRateLimited() {
   }
 
   if (submissionAttempts >= securityConfig.submissionLimit) {
-    swal("Too many attempts", "You have exceeded the maximum number of submissions. Please try again later.");
+    swal("Too many attempts\nTerlalu banyak percobaan", "You have exceeded the maximum number of submissions. Please try again later. Tunggu 1 menit\nAnda telah melebihi jumlah maksimum pengiriman. Silakan coba lagi nanti. Tunggu 1 menit", "error");
     return true;
   }
   submissionAttempts++;
   return false;
 }
+
+function setSecureCookie(){
+  const expires = new Date();
+  expires.setDate(expires.getDate() + 1);
+  // document.cookie = `userName=${formState.name.value};address=${formState.address.value};class=${formState.className.value};expires=${expires.toUTCString()};secure SameSite=None; HttpOnly path=/`;
+  // document.cookie = `userName=${formState.name.value};userAddress=${formState.address.value};userClass=${formState.className.value};expires=${expires.toUTCString()};secure;SameSite=Strict;path=/`;
+  document.cookie = `userName=${formState.name.value}; expires=${expires.toUTCString()}; secure; SameSite=Strict; path=/`;
+  document.cookie = `userAddress=${formState.address.value}; expires=${expires.toUTCString()}; secure; SameSite=Strict; path=/`;
+  document.cookie = `userClass=${formState.className.value}; expires=${expires.toUTCString()}; secure; SameSite=Strict; path=/`;
+
+  console.log(`Login at: ${new Date().toLocaleString()}`);
+}
+
+function checkAndRefreshCookie() {
+  const cookies = document.cookie.split("; ");
+  let cookieFound = false;
+
+  cookies.forEach(cookie => {
+    const [name] = cookie.split("=");
+    
+    if (name === "userName" || name === "userAddress" || name === "userClass") {
+      cookieFound = true;
+    }
+  });
+
+  if (!cookieFound) {
+    console.log("Cookie expired or missing. Refreshing cookies.");
+    setSecureCookie();
+  }
+}
+
 
 function submitForm() {
   if (isRateLimited()) {
@@ -120,12 +151,16 @@ function submitForm() {
     sessionStorage.setItem("userAddress", formState.address.value);
     sessionStorage.setItem("userClass", formState.className.value);
 
+    setSecureCookie();
+    checkAndRefreshCookie();
+
     window.location.href = "menu.html";
   } catch (error) {
     console.error("Error storing form data:", error);
     // alert('Terjadi kesalahan. Silakan coba lagi.');
     swal("Terjadi kesalahan", "Silakan coba lagi.");
   }
+  console.log(`Login at: ${new Date().toLocaleString()}`);
 }
 
 function shakeElement(element) {
