@@ -3,6 +3,8 @@ const securityConfig = {
   namePattern: /^[a-zA-Z\s]+$/,
   addressPattern: /^[a-zA-Z0-9\s,./-]+$/,
   classPattern: /^[a-zA-Z0-9\s-]+$/,
+  submissionLimit: 5,
+  submissionTimeout: 60000,
 };
 
 let formState = {
@@ -10,6 +12,9 @@ let formState = {
   address: { valid: true, value: "" },
   className: { valid: true, value: "" },
 };
+
+let submissionAttempts = 0;
+let lastSubmissionTime = Date.now();
 
 let lastValidation = Date.now();
 const VALIDATION_THROTTLE = 100;
@@ -83,7 +88,28 @@ function updateNextButton() {
   nextButton.classList.toggle("active", isValid);
 }
 
+function isRateLimited() {
+  const currentTime = Date.now();
+  const timeDiff = currentTime - lastSubmissionTime;
+
+  if (timeDiff > securityConfig.submissionTimeout) {
+    submissionAttempts = 0;
+    lastSubmissionTime = currentTime;
+  }
+
+  if (submissionAttempts >= securityConfig.submissionLimit) {
+    swal("Too many attempts", "You have exceeded the maximum number of submissions. Please try again later.");
+    return true;
+  }
+  submissionAttempts++;
+  return false;
+}
+
 function submitForm() {
+  if (isRateLimited()) {
+    return;
+  }
+
   if (!formState.name.valid) {
     shakeElement(document.getElementById("name"));
     return;
