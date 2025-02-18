@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="id" dir="ltr" class="no-js" oncontextmenu="return false">
     <head>
-        <link rel="canonical" href="https://kantinburom.github.io/" />
         <meta charset="UTF-8" />
+        <link rel="canonical" href="https://kantinburom.github.io/" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Pemesanan Menu - Warung Bu Rom</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./css/index.css" />
+
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
@@ -16,6 +17,11 @@
         <meta http-equiv="X-XSS-Protection" content="1; mode=block">
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
         <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+        <link rel="icon" type="image/x-icon" href="./image/IMG-11022025-buRom.webp" />
 
         <!-- HTML Meta Tags -->
         <meta name="description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
@@ -162,12 +168,13 @@
                     </a>
                 </div>
                 <p class="footer-text">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    Warung Bu Rom, Indra Dwi A. All rights reserved.
+                    &copy;<span id="current-year"></span> Warung Bu Rom, Indra Dwi A. All rights reserved.
                 </p>
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('current-year').textContent = new Date().getFullYear();
+                });
+                </script>
             </div>
         </footer>
         <noscript>
