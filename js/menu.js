@@ -203,23 +203,6 @@ function showStoreInfo() {
   });
 }
 
-const style = document.createElement("style");
-style.textContent = `
-.qr-modal {
-max-width: 95vw !important;
-}
-.qr-modal .swal-content {
-margin: 1em auto;
-text-align: center;
-}
-.qr-modal img {
-object-fit: contain;
-display: block;
-margin: 0 auto;
-}
-`;
-document.head.appendChild(style);
-
 // const menuItems = {
 //     IndomieGoreng: {
 //         name: "Indomie Goreng",
@@ -597,22 +580,66 @@ function checkStoreStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.addEventListener("keydown", function (event) {
-    if (
-      event.key === "PrintScreen" ||
-      event.key === "F12" ||
-      (event.ctrlKey && event.shiftKey && event.key === "S")
-    ) {
-      swal(
-        "Terjadi kesalahan",
-        "Tidak diperbolehkan mengambil screenshot atau membuka console",
-        "error"
-      );
-      console.log(
-        "Tidak diperbolehkan mengambil screenshot atau membuka console"
-      );
-      event.preventDefault();
-    }
-  });
+  processLinks();
+  processForms();
+  document.addEventListener("keydown", handleKeys);
   loadMenu();
 });
+
+function processLinks() {
+  const links = document.querySelectorAll('a[href], area[href], [ping]');
+  for (const link of links) {
+    processLink(link);
+  }
+}
+
+function processForms() {
+  const forms = document.querySelectorAll('form[action]');
+  for (const form of forms) {
+    processForm(form);
+  }
+}
+
+function processLink(node) {
+  let href = node.getAttribute('href');
+  if (href) {
+    if (href.match(/^(javascript:|\/internal-script-url)/i)) {
+      node.removeAttribute('href');
+    }
+  }
+  let ping = node.getAttribute('ping');
+  if (ping) {
+    node.setAttribute('ping', scrubUrl(ping));
+  }
+}
+
+function processForm(node) {
+  let action = node.getAttribute('action');
+  if (action) {
+    node.setAttribute('action', scrubUrl(action));
+  }
+}
+
+function scrubUrl(url) {
+  return url
+    ?.replace(/^(javascript:|data:)/i, '')
+    ?.replace(/[<>]/g, '');
+}
+
+function handleKeys(event) {
+  if (
+    event.key === "PrintScreen" ||
+    event.key === "F12" ||
+    (event.ctrlKey && event.shiftKey && event.key === "S")
+  ) {
+    swal(
+      "Terjadi kesalahan",
+      "Tidak diperbolehkan mengambil screenshot atau membuka console",
+      "error"
+    );
+    console.log(
+      "Tidak diperbolehkan mengambil screenshot atau membuka console"
+    );
+    event.preventDefault();
+  }
+}
