@@ -372,12 +372,16 @@
     <footer class="footer">
         <div class="footer-content">
             <!-- <p>&copy; 2025 Warung Bu Rom. Hak Cipta Dilindungi.</p> -->
-             <script>document.write(new Date().getFullYear())</script> Warung Bu Rom. Hak Cipta Dilindungi.
+            &copy;<span id="current-year"></span> Warung Bu Rom. Hak Cipta Dilindungi.
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+        
         AOS.init({
             duration: 800,
             once: true
