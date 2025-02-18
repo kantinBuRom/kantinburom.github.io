@@ -11,6 +11,24 @@
         <link rel="stylesheet" href="./css/styles.css" />
         <link rel="icon" type="image/x-icon" href="./image/IMG-11022025-buRom.webp" />
 
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';frame-src 'self' https://www.google.com;child-src 'self' https://www.google.com;img-src 'self' data: blob:; /> -->
+
+        <meta
+        http-equiv="Content-Security-Policy"
+        content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        frame-src 'self' https://www.google.com;
+        child-src 'self' https://www.google.com;
+        img-src 'self' data: blob:;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+      "
+      />
+      
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
         <!-- HTML Meta Tags -->
         <meta name="description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
         <meta name="language" content="id" />
