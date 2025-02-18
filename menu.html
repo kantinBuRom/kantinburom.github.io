@@ -11,8 +11,6 @@
         <link rel="stylesheet" href="./css/styles.css" />
         <link rel="icon" type="image/x-icon" href="./image/IMG-11022025-buRom.webp" />
 
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';frame-src 'self' https://www.google.com;child-src 'self' https://www.google.com;img-src 'self' data: blob:; /> -->
-
         <meta
         http-equiv="Content-Security-Policy"
         content="
@@ -25,7 +23,7 @@
         font-src 'self' https://fonts.gstatic.com;
       "
       />
-      
+
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
         <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
 
@@ -100,7 +98,8 @@
             <h2>Lokasi Toko</h2>
             <div class="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3738166352805!2d106.68896592415025!3d-6.345614212081687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sPamulang%20University%20Campus%202%20(UNPAM%20Viktor)!5e0!3m2!1sen!2sid!4v1739282816919!5m2!1sen!2sid"
+                    id="lazyIframe"
+                    src="about:blank"
                     allowfullscreen=""
                     title="Pamulang University Campus 2 Location"
                     width="600"
@@ -109,7 +108,8 @@
                 </iframe>
             </div>
         </div>
-
+        
+        <script src="./js/googlemapss.js"></script>
         <script src="./js/menu.js"></script>
     </body>
 </html>
