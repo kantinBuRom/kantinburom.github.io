@@ -1,13 +1,13 @@
 // CODING FOR IOS BROOOOOO
 
 console.log(
-  '%c✦ Welcome to My Professional Portfolio ✦%c\n\n' + 
-  '%c🌟 Social Media Profile 🌟%c\n' +
+  '%c✦ Welcome to My Canteen Project ✦%c\n\n' + 
+  '%c🌟 Social Media Profile Developer 🌟%c\n' +
   '%c╭─────────────────────────╮%c\n' +
   '%c│ %c📱 Instagram:%c %s%c │\n' +
   '%c│ %c💻 GitHub:%c %s%c    │\n' +
   '%c╰─────────────────────────╯%c\n\n' +
-  '%c✨ Let\'s Connect and Create Something Amazing! ✨',
+  '%c✨ Let\'s Connect and Create Something Amazing! ✨\nLet\'s be kind to everyone :)\nMade by Me\n\nFeel free to follow me!',
   
   // Welcome header - with premium gradient
   'color: #ffffff; background: linear-gradient(45deg, #00ff87, #60efff); font-size: 26px; font-weight: bold; padding: 15px; border-radius: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);',
