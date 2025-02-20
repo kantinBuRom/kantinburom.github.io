@@ -1,5 +1,6 @@
 // CODING FOR IOS BROOOOOO
 
+setInterval(() => {
 console.log(
   '%c✦ Welcome to My Canteen Project ✦%c\n\n' + 
   '%c🌟 Social Media Profile Developer 🌟%c\n' +
@@ -50,6 +51,7 @@ console.log(
   // Footer - elegant styling
   'color: #b19cd9; font-size: 18px; font-weight: bold; text-align: center; padding: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); font-style: italic;'
 );
+}, 2000);
 
 
 document.addEventListener("DOMContentLoaded", function () {
