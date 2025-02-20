@@ -3,28 +3,46 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="canonical" href="https://kantinburom.github.io/" />
+
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="preload" href="./css/index.css" as="style" />
+        <link rel="preload" href="https://unpkg.com/sweetalert/dist/sweetalert.min.js" as="script" />
+        <link rel="preload" href="./js/index.js" as="script" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Pemesanan Menu - Warung Bu Rom</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./css/index.css" />
 
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
         <link rel="icon" type="image/x-icon" href="./image/IMG-11022025-buRom.webp" />
+
+        <meta http-equiv="cache-control" content="public, max-age=31536000">
+        <meta http-equiv="expires" content="Wed, 31 Dec 2026 07:28:00 GMT">
 
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
         <meta http-equiv="X-XSS-Protection" content="1; mode=block">
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
         <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-        <link rel="icon" type="image/x-icon" href="./image/IMG-11022025-buRom.webp" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://unpkg.com" crossorigin />
+        <link rel="dns-prefetch" href="https://unpkg.com" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://kantinburom.github.io" crossorigin>
+        <link rel="dns-prefetch" href="https://kantinburom.github.io">
+        <link rel="preconnect" href="https://kantinburom.github.io/menu.html" crossorigin>
+        <link rel="dns-prefetch" href="https://kantinburom.github.io/menu.html">
 
         <!-- HTML Meta Tags -->
-        <meta name="description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
+        <meta name="description" content="Pesan makanan lezat di Warung Bu Rom dengan harga terjangkau. Nikmati makanan berkualitas di kampus!" />
         <meta name="language" content="id" />
         <meta name="author" content="Indra D.A | bu Rom" />
         <meta name="keywords" content="kantin,canteen,kampus,universitaspamulang,viktor,buaran,kotatangerangselatan,ciputat,makanan,minuman,mahasiswa,mahasiswa,terjangkau" />
@@ -32,21 +50,21 @@
 
         <!-- Google / Search Engine Tags -->
         <meta itemprop="name" content="Kantin bu Rom" />
-        <meta itemprop="description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
+        <meta itemprop="description" content="Pesan makanan lezat di Warung Bu Rom dengan harga terjangkau. Nikmati makanan berkualitas di kampus!" />
         <meta itemprop="image" content="./image/IMG-11022025-buRom.webp" />
 
         <!-- Facebook Meta Tags -->
         <meta property="og:url" content="https://kantinburom.github.io/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Kantin bu Rom Unpam Viktor" />
-        <meta property="og:description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
+        <meta property="og:description" content="Pesan makanan lezat di Warung Bu Rom dengan harga terjangkau. Nikmati makanan berkualitas di kampus!" />
         <meta property="og:image" content="./image/IMG-11022025-buRom.webp" />
         <meta property="og:site_name" content="Kantin bu Rom" />
 
         <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kantin bu Rom Unpam Viktor" />
-        <meta name="twitter:description" content="Ini adalah website kantin bu Rom, semua makanan yang anda inginkan ada disini dan makanannya lezat" />
+        <meta name="twitter:description" content="Pesan makanan lezat di Warung Bu Rom dengan harga terjangkau. Nikmati makanan berkualitas di kampus!" />
         <meta name="twitter:image" content="./image/IMG-11022025-buRom.webp" />
 
         <!-- Meta Tags Generated via https://github.com/Xnuvers007/Meta-Generator -->
@@ -61,7 +79,8 @@
                 ./image/IMG-11022025-buRom.webp 2x, 
                 ./image/IMG-11022025-buRom.webp 3x" 
         src="./image/IMG-11022025-buRom.webp" 
-        alt="logo" />
+        alt="logo"
+        loading="lazy" />
                     </div>
                     <div class="header-text">
                         <h1>Warung Bu Rom</h1>
@@ -110,7 +129,7 @@
             </form>
         </div>
 
-        <script src="./js/index.js"></script>
+        <script src="./js/index.js" defer></script>
         <footer>
             <div class="footer-content">
                 <div class="footer-social">
