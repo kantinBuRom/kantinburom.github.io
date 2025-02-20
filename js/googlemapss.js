@@ -1,10 +1,56 @@
 // CODING FOR IOS BROOOOOO
 
-console.log('%c%s', 
-'color: green; background: yellow; font-size: 24px;',
-"Helooooo :3\nDon't forget to follow my Instagram: %chttps://instagram.com/Indradwi.25",
-'color: blue; text-decoration: underline; font-size: 24px;'
+console.log(
+  '%c✦ Welcome to My Professional Portfolio ✦%c\n\n' + 
+  '%c🌟 Social Media Profile 🌟%c\n' +
+  '%c╭─────────────────────────╮%c\n' +
+  '%c│ %c📱 Instagram:%c %s%c │\n' +
+  '%c│ %c💻 GitHub:%c %s%c    │\n' +
+  '%c╰─────────────────────────╯%c\n\n' +
+  '%c✨ Let\'s Connect and Create Something Amazing! ✨',
+  
+  // Welcome header - with premium gradient
+  'color: #ffffff; background: linear-gradient(45deg, #00ff87, #60efff); font-size: 26px; font-weight: bold; padding: 15px; border-radius: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);',
+  '',
+  
+  // Section header - elegant purple
+  'color: #b19cd9; font-size: 22px; font-weight: bold; text-align: center; padding: 10px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);',
+  '',
+  
+  // Box top border
+  'color: #60efff; font-size: 16px;',
+  '',
+  
+  // Box content alignment
+  'color: #ffffff;',
+  // Instagram label
+  'color: #00ff87; font-size: 18px; font-weight: bold;',
+  // Instagram username style
+  'color: #60efff; font-size: 18px; cursor: pointer;',
+  // Instagram URL
+  'https://instagram.com/Indradwi.25',
+  // Box continuation
+  'color: #60efff;',
+  
+  // Box middle
+  'color: #60efff;',
+  // GitHub label
+  'color: #00ff87; font-size: 18px; font-weight: bold;',
+  // GitHub username style
+  'color: #60efff; font-size: 18px; cursor: pointer;',
+  // GitHub URL
+  'https://github.com/Xnuvers007',
+  // Box continuation
+  'color: #60efff;',
+  
+  // Box bottom border
+  'color: #60efff; font-size: 16px;',
+  '',
+  
+  // Footer - elegant styling
+  'color: #b19cd9; font-size: 18px; font-weight: bold; text-align: center; padding: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); font-style: italic;'
 );
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const iframe = document.getElementById('lazyIframe');
