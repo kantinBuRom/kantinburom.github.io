@@ -1,6 +1,10 @@
 // CODING FOR IOS BROOOOOO
 
-console.log("Helooooo");
+console.log('%c%s', 
+'color: green; background: yellow; font-size: 24px;',
+"Helooooo :3\nDon't forget to follow my Instagram: %chttps://instagram.com/Indradwi.25",
+'color: blue; text-decoration: underline; font-size: 24px;'
+);
 
 document.addEventListener("DOMContentLoaded", function () {
     const iframe = document.getElementById('lazyIframe');
