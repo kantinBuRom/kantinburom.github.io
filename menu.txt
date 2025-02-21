@@ -3,162 +3,162 @@
     "name": "Indomie Goreng 🍜",
     "price": 8000,
     "qty": 0,
-    "description": "Indomie Goreng dengan telur"
+    "description": "Klasik mi goreng Indonesia yang disajikan dengan rasa yang sempurna, dipadu dengan bumbu rahasia autentik yang menghadirkan cita rasa nostalgia dalam setiap suapan"
   },
   "IndomieKari": {
     "name": "Indomie Kari 🍜",
     "price": 8000,
     "qty": 0,
-    "description": "Indomie Kari dengan kuah yang menyegarkan"
+    "description": "Kelezatan mi dalam kuah kari yang kaya rempah, menciptakan harmoni rasa yang menyegarkan dan menghangatkan tubuh"
   },
   "IndomieSoto": {
     "name": "Indomie Soto 🍜",
     "price": 8000,
     "qty": 0,
-    "description": "Indomie Soto dengan cita rasa kuah yang sangat nikmat"
+    "description": "Mi dalam kuah soto bening yang aromatis, diracik dengan bumbu traditional Indonesia, menghadirkan sensasi kesegaran dalam setiap sendoknya"
   },
   "MieGorengTelur": {
     "name": "Mie Goreng Telur 🍜",
     "price": 10000,
     "qty": 0,
-    "description": "Mie Goreng dengan telur"
+    "description": "Mi goreng spesial dengan telur yang dimasak sempurna, diolah dengan teknik khusus untuk menghasilkan tekstur mi yang pas dan rasa yang menggugah selera"
   },
   "KwetiauGoreng": {
     "name": "Kwetiau Goreng 🍛",
     "price": 12000,
     "qty": 0,
-    "description": "Kwetiau Goreng dengan rasa yang gurih"
+    "description": "Kwetiau premium yang digoreng dengan teknik wok hei tradisional, menghasilkan aroma smoky yang menggoda dan tekstur yang sempurna"
   },
   "KwetiauRebus": {
     "name": "Kwetiau Rebus 🍛",
     "price": 12000,
     "qty": 0,
-    "description": "Kwetiau Rebus dengan kuah yang segar"
+    "description": "Kwetiau dalam kuah bening yang gurih dan menyegarkan, disajikan dengan sayuran segar pilihan untuk memberikan pengalaman makan yang sehat dan nikmat"
   },
   "KwetiauGorengSpesial": {
     "name": "Kwetiau Goreng Spesial 🍛",
     "price": 15000,
     "qty": 0,
-    "description": "Kwetiau Goreng Spesial dengan rasa yang gurih"
+    "description": "Hidangan signature kami dengan kwetiau premium, diolah bersama berbagai topping pilihan dan bumbu rahasia yang menciptakan kelezatan tak terlupakan"
   },
   "KwetiauRebusSpesial": {
     "name": "Kwetiau Rebus Spesial 🍛",
     "price": 15000,
     "qty": 0,
-    "description": "Kwetiau Rebus Spesial dengan kuah yang segar"
+    "description": "Kwetiau premium dalam kuah istimewa yang kaya rasa, dilengkapi dengan berbagai topping premium untuk pengalaman kuliner yang lebih mewah"
   },
   "PopMie": {
     "name": "Pop Mie 🍜",
     "price": 10000,
     "qty": 0,
-    "description": "Pop Mie dengan rasa yang nikmat"
+    "description": "Mi instan premium yang disajikan dengan kesempurnaan, memberikan kenyamanan dan kepraktisan tanpa mengorbankan cita rasa"
   },
   "NasiGorengTelur": {
     "name": "Nasi Goreng Telur 🍱",
     "price": 10000,
     "qty": 0,
-    "description": "Nasi Goreng dengan telur"
+    "description": "Nasi goreng klasik dengan telur mata sapi sempurna, dimasak dengan bumbu pilihan yang menghadirkan cita rasa otentik masakan rumahan"
   },
   "RiceBowlTelur": {
     "name": "Rice Bowl Telur 🍱",
     "price": 10000,
     "qty": 0,
-    "description": "Rice Bowl dengan telur"
+    "description": "Kombinasi nasi putih pulen dengan telur yang dimasak sempurna, disajikan dengan saus spesial untuk pengalaman makan yang praktis namun berkelas"
   },
   "RiceBowlAyam": {
     "name": "Rice Bowl Ayam 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Rice Bowl dengan ayam"
+    "description": "Potongan ayam premium yang dimasak sempurna di atas nasi pulen, dilengkapi dengan saus signature kami untuk menciptakan harmoni rasa yang sempurna"
   },
   "NasiAyamGeprek": {
     "name": "Nasi Ayam Geprek 🌶️",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Geprek dengan sambal yang pedas"
+    "description": "Ayam crispy yang digeprek dengan sambal fresh yang pedas menggigit, disajikan dengan nasi putih hangat untuk pengalaman kuliner yang menantang"
   },
   "NasiAyamPenyet": {
     "name": "Nasi Ayam 🌶️",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Geprek Spesial dengan sambal yang pedas"
+    "description": "Ayam yang dipenyet dengan sambal tradisional yang kaya rempah, menciptakan ledakan rasa yang memanjakan lidah dalam setiap suapan"
   },
   "NasiAyamGoreng": {
     "name": "Nasi Ayam Goreng 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Goreng dengan ayam yang renyah"
+    "description": "Ayam goreng renyah dengan bumbu meresap hingga ke dalam, disajikan dengan nasi putih hangat dan lalapan segar pilihan"
   },
   "NasiAyamBakar": {
     "name": "Nasi Ayam Bakar 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Bakar dengan ayam yang gurih"
+    "description": "Ayam bakar dengan bumbu marinasi special yang dipanggang sempurna, menghasilkan aroma yang menggoda dan rasa yang membekas di hati"
   },
   "NasiAyamBarbeque": {
     "name": "Nasi Ayam Barbeque 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Barbeque"
+    "description": "Ayam yang dibalut dengan saus barbeque premium dan dipanggang hingga sempurna, menciptakan perpaduan rasa manis, asam, dan smoky yang menggoda"
   },
   "NasiAyamAsamManis": {
     "name": "Nasi Ayam Asam Manis 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Asam Manis"
+    "description": "Potongan ayam crispy yang dibalut dengan saus asam manis special, menciptakan harmoni rasa yang memikat dan tak terlupakan"
   },
   "NasiAyamHotLava": {
     "name": "Nasi Ayam Hot Lava 🌶️",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Hot Lava dengan sambal yang pedas"
+    "description": "Inovasi terbaru dengan ayam crispy yang diselimuti saus hot lava signature, menghadirkan sensasi pedas yang membara namun ketagihan"
   },
   "NasiAyamBolognese": {
     "name": "Nasi Ayam Bolognese 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Bolognese"
+    "description": "Fusion unik dari ayam crispy dengan saus bolognese Italia autentik, menciptakan pengalaman kuliner cross-cultural yang menakjubkan"
   },
   "NasiAyamKatsu": {
     "name": "Nasi Ayam Katsu 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Katsu"
+    "description": "Ayam katsu gaya Jepang yang renyah di luar dan juicy di dalam, disajikan dengan nasi dan saus tonkatsu special"
   },
   "NasiAyamTeriyaki": {
     "name": "Nasi Ayam Teriyaki 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Ayam Teriyaki"
+    "description": "Potongan ayam yang dimasak dengan saus teriyaki premium, menghadirkan cita rasa Jepang autentik yang manis dan gurih"
   },
   "NasiSotoAyam": {
     "name": "Nasi Soto Ayam 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Soto Ayam dengan kuah yang nikmat"
+    "description": "Soto ayam traditional dengan kuah bening yang kaya rempah, disajikan dengan nasi putih dan condimen lengkap untuk menyempurnakan hidangan"
   },
   "NasiGorengSpesial": {
     "name": "Nasi Goreng Spesial 🍱",
     "price": 15000,
     "qty": 0,
-    "description": "Nasi Goreng Spesial dengan rasa yang nikmat"
+    "description": "Nasi goreng premium dengan berbagai topping istimewa, dimasak dengan teknik khusus menggunakan bumbu rahasia warisan untuk menciptakan cita rasa yang legendaris"
   },
   "Seblak": {
     "name": "Seblak 🍲",
     "price": 12000,
     "qty": 0,
-    "description": "Seblak dengan sambal yang pedas"
+    "description": "Hidangan street food modern dengan kerupuk yang direbus sempurna dalam kuah pedas yang khas, menciptakan sensasi menghangatkan yang membuat ketagihan"
   },
   "Sosis": {
     "name": "Sosis 🥖",
     "price": 10000,
     "qty": 0,
-    "description": "Sosis dengan rasa yang nikmat"
+    "description": "Sosis premium pilihan yang diolah dengan teknik khusus, menghadirkan tekstur crispy di luar dan juicy di dalam"
   },
   "AirMineral": {
     "name": "Air Mineral 💧",
     "price": 5000,
     "qty": 0,
-    "description": "Air Mineral dengan rasa yang segar"
+    "description": "Air mineral murni berkualitas tinggi yang menyegarkan, sempurna untuk menemani setiap hidangan"
   }
 }
