@@ -88,7 +88,7 @@
                         <p class="subtitle">Silakan isi data diri Anda untuk melanjutkan pemesanan</p>
                     </div>
                 </div>
-                <a rel="noopener noreferrer" href="#" class="download-app" onclick="let priv6 = 'aHR0cHM6Ly9rYW50aW5idXJvbS5naXRodWIuaW8vYXBsaWthc2kvS2FudGluJTIwYnUlMjBSb20uYXBr'; window.location.href = atob(priv6)">
+                <a id="download-app" rel="noopener noreferrer" href="#" class="download-app" onclick="let priv6 = 'aHR0cHM6Ly9rYW50aW5idXJvbS5naXRodWIuaW8vYXBsaWthc2kvS2FudGluJTIwYnUlMjBSb20uYXBr'; window.location.href = atob(priv6)">
                     <i class="fas fa-download"></i>
                     Download Aplikasi
                 </a>
@@ -136,6 +136,7 @@
                 <div class="footer-social">
                     <a
                         href="#"
+                        id="facebook"
                         class="social-icon facebook"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -144,7 +145,7 @@
                     >
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Gmail" onclick="let priv2 = 'bWFpbHRvOnNpdGlyb21sYWg1ODE5ODBAZ21haWwuY29t'; window.location.href = atob(priv2)">
+                    <a href="#" id="gmail" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Gmail" onclick="let priv2 = 'bWFpbHRvOnNpdGlyb21sYWg1ODE5ODBAZ21haWwuY29t'; window.location.href = atob(priv2)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24" width="64" height="64">
                             <path d="M29.986 27.715H2.008C.915 27.715 0 26.85 0 25.733V6.376A2.01 2.01 0 0 1 2.008 4.37h27.978c1.093 0 2.008.9 2.008 2.008v19.33c-.025 1.144-.915 2.008-2.008 2.008z" fill="#f2f2f2" />
                             <path d="M4 27.715l11.97-8.76.076-.508L3.7 9.578l-.025 17.705z" opacity=".1" fill="#221f1f" />
@@ -167,6 +168,7 @@
                     </a>
                     <a
                         href="#"
+                        id="whatsapp"
                         class="social-icon whatsapp"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -178,6 +180,7 @@
                 </div>
                 <div class="footer-links">
                     <a
+                        id="tentang-kami"
                         rel="noopener noreferrer"
                         href="#"
                         onclick="swal({title: 'Tentang Kami', text: 'Informasi tentang Warung Bu Rom...', icon: 'success', button: 'OK'}).then(() => { let priv4 = 'Li90ZW50YW5nLWthbWkuaHRtbA=='; window.location.href = atob(priv4); });"
@@ -185,6 +188,7 @@
                         Tentang Kami
                     </a>
                     <a
+                        id="kebijakan-privasi"
                         rel="noopener noreferrer"
                         href="#"
                         onclick="swal({title: 'Kebijakan Privasi', text: 'Informasi tentang Kebijakan Privasi pada Warung Bu Rom...', icon: 'success', button: 'OK'}).then(() => { let priv5 = 'Li9rZWJpamFrYW4tcHJpdmFzaS5odG1s'; window.location.href = atob(priv5); });"
