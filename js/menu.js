@@ -580,11 +580,27 @@ function checkStoreStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  initConnectionStatus();
   processLinks();
   processForms();
   document.addEventListener("keydown", handleKeys);
   loadMenu();
 });
+
+function initConnectionStatus() {
+  window.addEventListener("offline", () => showConnectionAlert("offline"));
+  window.addEventListener("online", () => showConnectionAlert("online"));
+}
+
+function showConnectionAlert(status) {
+  const message = status === "offline" ? "Kamu Offline" : "Kamu Online";
+  
+  // Menggunakan textContent untuk mencegah XSS
+  const alertMessage = document.createElement('div');
+  alertMessage.textContent = message;
+  
+  alert(alertMessage.textContent);
+}
 
 function processLinks() {
   const links = document.querySelectorAll('a[href], area[href], [ping]');
