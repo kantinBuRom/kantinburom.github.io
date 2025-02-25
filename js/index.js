@@ -169,6 +169,7 @@ function shakeElement(element) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  initConnectionStatus()
   sessionStorage.clear();
 
   const inputs = document.querySelectorAll(".form-control");
@@ -177,3 +178,18 @@ document.addEventListener("DOMContentLoaded", function () {
     validateInput(input, input.id);
   });
 });
+
+function initConnectionStatus() {
+  window.addEventListener("offline", () => showConnectionAlert("offline"));
+  window.addEventListener("online", () => showConnectionAlert("online"));
+}
+
+function showConnectionAlert(status) {
+  const message = status === "offline" ? "Kamu Offline" : "Kamu Online";
+  
+  // Menggunakan textContent untuk mencegah XSS
+  const alertMessage = document.createElement('div');
+  alertMessage.textContent = message;
+  
+  alert(alertMessage.textContent);
+}
