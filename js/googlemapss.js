@@ -55,6 +55,7 @@ console.log(
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  initConnectionStatus()
     const iframe = document.getElementById('lazyIframe');
     const src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3738166352805!2d106.68896592415025!3d-6.345614212081687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sPamulang%20University%20Campus%202%20(UNPAM%20Viktor)!5e0!3m2!1sen!2sid!4v1739282816919!5m2!1sen!2sid";
 
@@ -89,5 +90,19 @@ document.addEventListener("DOMContentLoaded", function () {
         iframe.src = src;
         iframe.setAttribute('loading', 'lazy');
     }
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="mNlHRbpIbjKOPhRwSzOJU";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 });
+
+function initConnectionStatus() {
+  window.addEventListener("offline", () => showConnectionAlert("offline"));
+  window.addEventListener("online", () => showConnectionAlert("online"));
+}
+
+function showConnectionAlert(status) {
+  const message = status === "offline" ? "Kamu Offline" : "Kamu Online";
+  
+  // Menggunakan textContent untuk mencegah XSS
+  const alertMessage = document.createElement('div');
+  alertMessage.textContent = message;
+  
+  alert(alertMessage.textContent);
+}
