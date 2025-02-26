@@ -379,29 +379,68 @@ function renderMenu() {
   );
 
   for (let [key, item] of sortedMenu) {
+    // Sanitize the item name, price, and description using DOMPurify
     const sanitizedItemName = DOMPurify.sanitize(item.name);
-    const sanitizedItemPrice = item.price.toLocaleString(); 
+    const sanitizedItemPrice = DOMPurify.sanitize(item.price.toLocaleString()); 
     const sanitizedItemDescription = DOMPurify.sanitize(item.description);
 
-    menuHTML += `
-      <div class="menu-item" data-name="${sanitizedItemName.toLowerCase()}">
-          <div class="menu-item-info">
-              <div class="menu-item-name">${sanitizedItemName}</div>
-              <div class="menu-item-price">Rp ${sanitizedItemPrice}</div>
-              <div class="menu-item-description">${sanitizedItemDescription}</div>
-          </div>
-          <div class="quantity-control">
-              <button class="qty-btn" onclick="changeQty('${key}', -1)" ${
-      item.qty === 0 ? "disabled" : ""
-    }>-</button>
-              <span class="qty-display" id="${key}Qty">${item.qty}</span>
-              <button class="qty-btn" onclick="changeQty('${key}', 1)">+</button>
-          </div>
-      </div>
-    `;
+    // Create the menu item elements programmatically to avoid using innerHTML
+    const menuItemDiv = document.createElement("div");
+    menuItemDiv.classList.add("menu-item");
+    menuItemDiv.setAttribute("data-name", sanitizedItemName.toLowerCase());
+
+    const menuItemInfoDiv = document.createElement("div");
+    menuItemInfoDiv.classList.add("menu-item-info");
+
+    const menuItemNameDiv = document.createElement("div");
+    menuItemNameDiv.classList.add("menu-item-name");
+    menuItemNameDiv.textContent = sanitizedItemName;  // Use textContent to prevent script injection
+
+    const menuItemPriceDiv = document.createElement("div");
+    menuItemPriceDiv.classList.add("menu-item-price");
+    menuItemPriceDiv.textContent = `Rp ${sanitizedItemPrice}`;  // Use textContent
+
+    const menuItemDescriptionDiv = document.createElement("div");
+    menuItemDescriptionDiv.classList.add("menu-item-description");
+    menuItemDescriptionDiv.textContent = sanitizedItemDescription;  // Use textContent
+
+    const quantityControlDiv = document.createElement("div");
+    quantityControlDiv.classList.add("quantity-control");
+
+    const decrementButton = document.createElement("button");
+    decrementButton.classList.add("qty-btn");
+    decrementButton.textContent = "-";
+    decrementButton.setAttribute("onclick", `changeQty('${key}', -1)`);
+    if (item.qty === 0) decrementButton.setAttribute("disabled", "true");
+
+    const qtyDisplaySpan = document.createElement("span");
+    qtyDisplaySpan.classList.add("qty-display");
+    qtyDisplaySpan.setAttribute("id", `${key}Qty`);
+    qtyDisplaySpan.textContent = item.qty;  // Use textContent
+
+    const incrementButton = document.createElement("button");
+    incrementButton.classList.add("qty-btn");
+    incrementButton.textContent = "+";
+    incrementButton.setAttribute("onclick", `changeQty('${key}', 1)`);
+
+    // Append all elements to their respective parent elements
+    quantityControlDiv.appendChild(decrementButton);
+    quantityControlDiv.appendChild(qtyDisplaySpan);
+    quantityControlDiv.appendChild(incrementButton);
+
+    menuItemInfoDiv.appendChild(menuItemNameDiv);
+    menuItemInfoDiv.appendChild(menuItemPriceDiv);
+    menuItemInfoDiv.appendChild(menuItemDescriptionDiv);
+
+    menuItemDiv.appendChild(menuItemInfoDiv);
+    menuItemDiv.appendChild(quantityControlDiv);
+
+    // Append the menu item div to the menu list container
+    menuHTML += menuItemDiv.outerHTML;
   }
 
-  document.getElementById("menuList").innerHTML = menuHTML;
+  // Use textContent when setting innerHTML
+  document.getElementById("menuList").textContent = menuHTML;
 }
 
 function changeQty(item, amount) {
