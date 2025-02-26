@@ -388,8 +388,7 @@ function renderMenu() {
     ;
   }
 
-  // document.getElementById("menuList").innerHTML = menuHTML;
-  document.getElementById("menuList").innerText = menuHTML;
+  document.getElementById("menuList").innerHTML = menuHTML;
 }
 
 function changeQty(item, amount) {
