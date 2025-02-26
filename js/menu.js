@@ -307,10 +307,19 @@ function updatejam() {
     hour12: false,
   });
 
-  document.getElementById("jam").innerHTML = `
-               <p class="jam">${dayOfWeek}, ${now.getDate()} ${month} ${now.getFullYear()}</p>
-               <p class="jam">${timeFormatted}</p>
-           `;
+  let jamElement = document.getElementById("jam");
+
+  jamElement.innerHTML = "";
+
+  let dayParagraph = document.createElement("p");
+  dayParagraph.classList.add("jam");
+  dayParagraph.textContent = `${dayOfWeek}, ${now.getDate()} ${month} ${now.getFullYear()}`;
+  jamElement.appendChild(dayParagraph);
+
+  let timeParagraph = document.createElement("p");
+  timeParagraph.classList.add("jam");
+  timeParagraph.textContent = timeFormatted;
+  jamElement.appendChild(timeParagraph);
 }
 
 setInterval(updatejam, 1000);
