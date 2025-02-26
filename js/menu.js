@@ -373,7 +373,7 @@ function loadUserData() {
 
 function renderMenu() {
   const menuList = document.getElementById("menuList");
-  menuList.innerHTML = ''; // Clear any existing content
+  menuList.innerHTML = '';
 
   const sortedMenu = Object.entries(menuItems).sort((a, b) =>
     a[1].name.localeCompare(b[1].name)
@@ -381,7 +381,7 @@ function renderMenu() {
 
   sortedMenu.forEach(([key, item]) => {
     const sanitizedItemName = DOMPurify.sanitize(item.name);
-    const sanitizedItemPrice = item.price.toLocaleString(); 
+    const sanitizedItemPrice = DOMPurify.sanitize(item.price.toLocaleString());
     const sanitizedItemDescription = DOMPurify.sanitize(item.description);
 
     const menuItemDiv = document.createElement("div");
@@ -415,7 +415,7 @@ function renderMenu() {
     const qtyDisplaySpan = document.createElement("span");
     qtyDisplaySpan.classList.add("qty-display");
     qtyDisplaySpan.setAttribute("id", `${key}Qty`);
-    qtyDisplaySpan.textContent = item.qty;  // Use textContent
+    qtyDisplaySpan.textContent = item.qty;
 
     const incrementButton = document.createElement("button");
     incrementButton.classList.add("qty-btn");
@@ -433,7 +433,8 @@ function renderMenu() {
     menuItemDiv.appendChild(menuItemInfoDiv);
     menuItemDiv.appendChild(quantityControlDiv);
 
-    menuList.appendChild(menuItemDiv);
+    // menuList.appendChild(menuItemDiv);
+    menuList.appendChild(DOMPurify.sanitize(menuItemDiv));
   });
 }
 
