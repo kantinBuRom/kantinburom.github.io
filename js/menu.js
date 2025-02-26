@@ -370,12 +370,16 @@ function renderMenu() {
   );
 
   for (let [key, item] of sortedMenu) {
-    menuHTML += 
-      <div class="menu-item" data-name="${item.name.toLowerCase()}">
+    const sanitizedItemName = DOMPurify.sanitize(item.name);
+    const sanitizedItemPrice = item.price.toLocaleString(); 
+    const sanitizedItemDescription = DOMPurify.sanitize(item.description);
+
+    menuHTML += `
+      <div class="menu-item" data-name="${sanitizedItemName.toLowerCase()}">
           <div class="menu-item-info">
-              <div class="menu-item-name">${item.name}</div>
-              <div class="menu-item-price">Rp ${item.price.toLocaleString()}</div>
-              <div class="menu-item-description">${item.description}</div>
+              <div class="menu-item-name">${sanitizedItemName}</div>
+              <div class="menu-item-price">Rp ${sanitizedItemPrice}</div>
+              <div class="menu-item-description">${sanitizedItemDescription}</div>
           </div>
           <div class="quantity-control">
               <button class="qty-btn" onclick="changeQty('${key}', -1)" ${
@@ -385,7 +389,7 @@ function renderMenu() {
               <button class="qty-btn" onclick="changeQty('${key}', 1)">+</button>
           </div>
       </div>
-    ;
+    `;
   }
 
   document.getElementById("menuList").innerHTML = menuHTML;
