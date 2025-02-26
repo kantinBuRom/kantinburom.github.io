@@ -370,16 +370,12 @@ function renderMenu() {
   );
 
   for (let [key, item] of sortedMenu) {
-    const escapedName = item.name;
-    const escapedDescription = item.description;
-    const escapedPrice = item.price.toLocaleString();
-
-    menuHTML += `
-      <div class="menu-item" data-name="${escapedName.toLowerCase()}">
+    menuHTML += 
+      <div class="menu-item" data-name="${item.name.toLowerCase()}">
           <div class="menu-item-info">
-              <div class="menu-item-name">${escapedName}</div>
-              <div class="menu-item-price">Rp ${escapedPrice}</div>
-              <div class="menu-item-description">${escapedDescription}</div>
+              <div class="menu-item-name">${item.name}</div>
+              <div class="menu-item-price">Rp ${item.price.toLocaleString()}</div>
+              <div class="menu-item-description">${item.description}</div>
           </div>
           <div class="quantity-control">
               <button class="qty-btn" onclick="changeQty('${key}', -1)" ${
@@ -389,12 +385,11 @@ function renderMenu() {
               <button class="qty-btn" onclick="changeQty('${key}', 1)">+</button>
           </div>
       </div>
-    `;
+    ;
   }
 
-  const menuList = document.getElementById("menuList");
-
-  menuList.textContent = menuHTML; // Avoid XSS coy pake innerText atau textContent
+  // document.getElementById("menuList").innerHTML = menuHTML;
+  document.getElementById("menuList").innerText = menuHTML;
 }
 
 function changeQty(item, amount) {
