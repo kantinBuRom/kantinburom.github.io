@@ -433,8 +433,8 @@ function renderMenu() {
     menuItemDiv.appendChild(menuItemInfoDiv);
     menuItemDiv.appendChild(quantityControlDiv);
 
-    // menuList.appendChild(menuItemDiv);
-    menuList.appendChild(DOMPurify.sanitize(menuItemDiv));
+    menuList.appendChild(menuItemDiv);
+    // menuList.appendChild(DOMPurify.sanitize(menuItemDiv));
   });
 }
 
