@@ -381,6 +381,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            initConnectionStatus();
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
         
@@ -398,6 +399,20 @@
                 navbar.style.padding = '1rem 2rem';
             }
         });
+        function initConnectionStatus() {
+  window.addEventListener("offline", () => showConnectionAlert("offline"));
+  window.addEventListener("online", () => showConnectionAlert("online"));
+}
+
+function showConnectionAlert(status) {
+  const message = status === "offline" ? "Kamu Offline" : "Kamu Online";
+  
+  // Menggunakan textContent untuk mencegah XSS
+  const alertMessage = document.createElement('div');
+  alertMessage.textContent = message;
+  
+  alert(alertMessage.textContent);
+}
     </script>
     <script src="./js/chatbot.js" defer></script>
 </body>
