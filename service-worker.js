@@ -21,7 +21,6 @@ const ASSETS = [
   '/image/QRIS2.webp',
   '/image/tentangkami.jpg',
   '/menu.txt',
-  '/js/visit-notify.js',
 //   '/aplikasi/Kantin%20bu%20Rom.apk',
   '/sitemap.xml',
   '/css/pwa-install.css',
