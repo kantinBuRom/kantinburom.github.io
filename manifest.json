@@ -1,0 +1,32 @@
+{
+  "name": "Kantin Bu Rom",
+  "short_name": "Kantin bu Rom",
+  "description": "Pemesanan Menu - Warung Bu Rom",
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d44c3d",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/image/IMG-11022025-buRom.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/image/IMG-11022025-buRom.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    },
+    {
+      "src": "/image/IMG-11022025-buRom.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp"
+    },
+    {
+      "src": "/image/IMG-11022025-buRom.webp",
+      "sizes": "64x64",
+      "type": "image/webp"
+    }
+  ]
+}
