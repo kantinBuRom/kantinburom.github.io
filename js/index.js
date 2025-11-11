@@ -193,3 +193,128 @@ function showConnectionAlert(status) {
   
   alert(alertMessage.textContent);
 }
+
+
+(function () {
+  const LS_KEY_INSTALLED = 'pwa_installed_v1';
+  const LS_KEY_DISMISSED = 'pwa_install_dismissed_v1';
+
+  let deferredPrompt = null;
+  const banner = document.getElementById('pwa-install-banner');
+  const installBtn = document.getElementById('pwa-install-btn');
+  const dismissBtn = document.getElementById('pwa-dismiss-btn');
+
+  const iosModal = document.getElementById('pwa-ios-modal');
+  const iosClose = document.getElementById('pwa-ios-close');
+
+  const isIos = () => /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  const isStandalone = () => (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+
+  function shouldShowCustomPrompt() {
+    if (localStorage.getItem(LS_KEY_INSTALLED) === 'true') return false;
+    if (localStorage.getItem(LS_KEY_DISMISSED) === 'true') return false;
+    if (isStandalone()) return false;
+    return true;
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    banner.classList.add('show');
+    banner.setAttribute('aria-hidden', 'false');
+  }
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('show');
+    banner.setAttribute('aria-hidden', 'true');
+  }
+
+  function showIosModal() {
+    if (!iosModal) return;
+    iosModal.classList.add('show');
+    iosModal.setAttribute('aria-hidden', 'false');
+  }
+  function hideIosModal() {
+    if (!iosModal) return;
+    iosModal.classList.remove('show');
+    iosModal.setAttribute('aria-hidden', 'true');
+  }
+
+  window.addEventListener('load', () => {
+    if (isStandalone()) {
+      localStorage.setItem(LS_KEY_INSTALLED, 'true');
+      hideBanner();
+      hideIosModal();
+      return;
+    }
+
+    if (isIos() && shouldShowCustomPrompt()) {
+      showIosModal();
+    }
+  });
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    if (shouldShowCustomPrompt()) {
+      showBanner();
+    }
+  });
+
+  if (installBtn) {
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) {
+        if (isIos()) showIosModal();
+        return;
+      }
+      deferredPrompt.prompt();
+      const choice = await deferredPrompt.userChoice;
+      if (choice && choice.outcome === 'accepted') {
+        localStorage.setItem(LS_KEY_INSTALLED, 'true');
+        hideBanner();
+        deferredPrompt = null;
+        try {
+          const reg = await navigator.serviceWorker.ready;
+          reg.showNotification('Terima kasih!', {
+            body: 'Aplikasi berhasil dipasang. Selamat menggunakan Warung Bu Rom!',
+            icon: '/image/IMG-11022025-buRom.webp'
+          });
+        } catch (err) { /* ignore */ }
+      } else {
+        localStorage.setItem(LS_KEY_DISMISSED, 'true');
+        hideBanner();
+      }
+    });
+  }
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      localStorage.setItem(LS_KEY_DISMISSED, 'true');
+      hideBanner();
+    });
+  }
+
+  window.addEventListener('appinstalled', (ev) => {
+    localStorage.setItem(LS_KEY_INSTALLED, 'true');
+    hideBanner();
+    hideIosModal();
+    console.log('PWA installed');
+  });
+
+  if (iosClose) {
+    iosClose.addEventListener('click', () => {
+      hideIosModal();
+      localStorage.setItem(LS_KEY_DISMISSED, 'true');
+    });
+  }
+
+  if (shouldShowCustomPrompt() === false) {
+    hideBanner();
+    hideIosModal();
+  }
+
+  window.pwaInstall = {
+    showBanner: () => { if (shouldShowCustomPrompt()) showBanner(); },
+    reset: () => { localStorage.removeItem(LS_KEY_DISMISSED); localStorage.removeItem(LS_KEY_INSTALLED); }
+  };
+})();

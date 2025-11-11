@@ -7,6 +7,7 @@
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
         <link rel="preload" href="./css/index.css" as="style" />
+        <link rel="preload" href="./css/pwa-install.css" as="style" />
         <link rel="preload" href="https://unpkg.com/sweetalert/dist/sweetalert.min.js" as="script" />
         <link rel="preload" href="./js/index.js" as="script" />
 
@@ -17,6 +18,7 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/pwa-install.css" />
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js" integrity="sha512-Ll+TuDvrWDNNRnFFIM8dOiw7Go7dsHyxRp4RutiIFW/wm3DgDmCnRZow6AqbXnCbpWu93yM1O34q+4ggzGeXVA==" crossorigin="anonymous" defer></script>
@@ -216,6 +218,29 @@
                 </script>
             </div>
         </footer>
+        <div id="pwa-install-banner" class="pwa-install-banner" aria-hidden="true" role="dialog" aria-label="Install aplikasi">
+        <div class="pwa-install-content">
+            <div class="pwa-install-info">
+            <img src="/image/IMG-11022025-buRom.webp" alt="logo" class="pwa-install-icon" width="48" height="48"/>
+            <div>
+                <div class="pwa-install-title">Pasang Warung Bu Rom</div>
+                <div class="pwa-install-desc">Tambah ke layar utama untuk akses cepat & notifikasi.</div>
+            </div>
+            </div>
+            <div class="pwa-install-actions">
+            <button id="pwa-install-btn" class="btn-primary">Pasang</button>
+            <button id="pwa-dismiss-btn" class="btn-secondary">Nanti</button>
+            </div>
+        </div>
+        </div>
+
+        <div id="pwa-ios-modal" class="pwa-ios-modal" aria-hidden="true" role="dialog" aria-label="Instruksi instalasi iOS">
+        <div class="pwa-ios-content">
+            <h3>Pasang ke Layar Utama</h3>
+            <p>Untuk memasang aplikasi di iPhone/iPad: ketuk tombol Bagikan (Share) → <strong>Add to Home Screen</strong>.</p>
+            <button id="pwa-ios-close" class="btn-primary">Tutup</button>
+        </div>
+        </div>
         <noscript>
             <br />
             <br />
