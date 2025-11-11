@@ -196,9 +196,6 @@ function showConnectionAlert(status) {
 
 
 (function () {
-  const LS_KEY_INSTALLED = 'pwa_installed_v1';
-  const LS_KEY_DISMISSED = 'pwa_install_dismissed_v1';
-
   let deferredPrompt = null;
   const banner = document.getElementById('pwa-install-banner');
   const installBtn = document.getElementById('pwa-install-btn');
@@ -208,20 +205,16 @@ function showConnectionAlert(status) {
   const iosClose = document.getElementById('pwa-ios-close');
 
   const isIos = () => /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-  const isStandalone = () => (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
-
-  function shouldShowCustomPrompt() {
-    if (localStorage.getItem(LS_KEY_INSTALLED) === 'true') return false;
-    if (localStorage.getItem(LS_KEY_DISMISSED) === 'true') return false;
-    if (isStandalone()) return false;
-    return true;
-  }
+  const isStandalone = () =>
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+    window.navigator.standalone === true;
 
   function showBanner() {
     if (!banner) return;
     banner.classList.add('show');
     banner.setAttribute('aria-hidden', 'false');
   }
+
   function hideBanner() {
     if (!banner) return;
     banner.classList.remove('show');
@@ -233,6 +226,7 @@ function showConnectionAlert(status) {
     iosModal.classList.add('show');
     iosModal.setAttribute('aria-hidden', 'false');
   }
+
   function hideIosModal() {
     if (!iosModal) return;
     iosModal.classList.remove('show');
@@ -241,13 +235,12 @@ function showConnectionAlert(status) {
 
   window.addEventListener('load', () => {
     if (isStandalone()) {
-      localStorage.setItem(LS_KEY_INSTALLED, 'true');
       hideBanner();
       hideIosModal();
       return;
     }
 
-    if (isIos() && shouldShowCustomPrompt()) {
+    if (isIos()) {
       showIosModal();
     }
   });
@@ -255,10 +248,7 @@ function showConnectionAlert(status) {
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-
-    if (shouldShowCustomPrompt()) {
-      showBanner();
-    }
+    showBanner();
   });
 
   if (installBtn) {
@@ -267,10 +257,11 @@ function showConnectionAlert(status) {
         if (isIos()) showIosModal();
         return;
       }
+
       deferredPrompt.prompt();
       const choice = await deferredPrompt.userChoice;
+
       if (choice && choice.outcome === 'accepted') {
-        localStorage.setItem(LS_KEY_INSTALLED, 'true');
         hideBanner();
         deferredPrompt = null;
         try {
@@ -281,7 +272,6 @@ function showConnectionAlert(status) {
           });
         } catch (err) { /* ignore */ }
       } else {
-        localStorage.setItem(LS_KEY_DISMISSED, 'true');
         hideBanner();
       }
     });
@@ -289,32 +279,21 @@ function showConnectionAlert(status) {
 
   if (dismissBtn) {
     dismissBtn.addEventListener('click', () => {
-      localStorage.setItem(LS_KEY_DISMISSED, 'true');
       hideBanner();
     });
   }
 
-  window.addEventListener('appinstalled', (ev) => {
-    localStorage.setItem(LS_KEY_INSTALLED, 'true');
+  window.addEventListener('appinstalled', () => {
     hideBanner();
     hideIosModal();
     console.log('PWA installed');
   });
 
   if (iosClose) {
-    iosClose.addEventListener('click', () => {
-      hideIosModal();
-      localStorage.setItem(LS_KEY_DISMISSED, 'true');
-    });
-  }
-
-  if (shouldShowCustomPrompt() === false) {
-    hideBanner();
-    hideIosModal();
+    iosClose.addEventListener('click', hideIosModal);
   }
 
   window.pwaInstall = {
-    showBanner: () => { if (shouldShowCustomPrompt()) showBanner(); },
-    reset: () => { localStorage.removeItem(LS_KEY_DISMISSED); localStorage.removeItem(LS_KEY_INSTALLED); }
+    showBanner,
   };
 })();
