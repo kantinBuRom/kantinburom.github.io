@@ -23,6 +23,7 @@ const ASSETS = [
   '/menu.txt',
   '/aplikasi/Kantin%20bu%20Rom.apk',
   '/sitemap.xml',
+  '/css/pwa-install.css',
   'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js',
