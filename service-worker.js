@@ -32,9 +32,15 @@ const ASSETS = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(ASSETS))
-      .then(() => self.skipWaiting())
+    caches.open(CACHE_NAME).then(async cache => {
+      for (const url of ASSETS) {
+        try {
+          await cache.add(url);
+        } catch (err) {
+          console.warn('[SW] Gagal cache:', url, err);
+        }
+      }
+    }).then(() => self.skipWaiting())
   );
 });
 
